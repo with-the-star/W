@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="main-content">
+    <h1>Sign in</h1>
+    <form [formGroup]="userSigninForm" (ngSubmit)="signin()">
+      <div class="textfield-container">
+        <div class="input-content">
+          <label for="firstName" class="form-control-label">Email</label>
+          <input type="email" pInputText id="email" formControlName="email" />
+        </div>
+        <div class="input-content">
+          <label for="lastName" class="form-control-label">Password</label>
+          <input
+            type="password"
+            pInputText
+            id="password"
+            formControlName="password"
+          />
+        </div>
+      </div>
+      <div class="action-container">
+        <div class="button-content">
+          <a>Reset your password ?</a>
+        </div>
+        <div class="button-content">
+          <p-button
+            type="submit"
+            label="Sign in"
+            [raised]="true"
+            icon="pi pi-sign-in"
+            size="small"
+          ></p-button>
+        </div>
+        <div class="button-content">
+          Don't have an account ? <a>Sign up now</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

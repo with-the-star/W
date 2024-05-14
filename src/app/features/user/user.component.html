@@ -1,0 +1,62 @@
+<div class="page-container">
+  <div class="main-container">
+    <nav class="main-menu">
+      <h1>Fitness App</h1>
+      <img
+        class="logo"
+        src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/4cfdcb5a-0137-4457-8be1-6e7bd1f29ebb"
+        alt=""
+      />
+      <ul>
+        <!-- <li *ngFor="let option of navOptions" class="nav-item"  routerLinkActive="active">
+          <b></b>
+          <b></b>
+          <a [routerLink]="option.path">
+            <i [class]="'pi ' + option.icon"></i>
+            <span class="nav-text">{{ option.displayName }}</span>
+          </a>
+        </li>
+ -->
+        <li class="nav-item" routerLinkActive="active">
+          <b></b>
+          <b></b>
+          <a routerLink="/user/dashboard">
+            <i class="pi pi-chart-bar nav-icon"></i>
+            <span class="nav-text">Dashboard</span>
+          </a>
+        </li>
+
+        <li class="nav-item" routerLinkActive="active">
+          <b></b>
+          <b></b>
+          <a routerLink="/user/chatting">
+            <i class="pi pi-comments nav-icon"></i>
+            <span class="nav-text">Chatting</span>
+          </a>
+        </li>
+
+        <li class="nav-item" routerLinkActive="active">
+          <b></b>
+          <b></b>
+          <a routerLink="/signin">
+            <i class="pi pi-map-marker nav-icon"></i>
+            <span class="nav-text">Activities</span>
+          </a>
+        </li>
+
+        <li class="nav-item" routerLinkActive="active">
+          <b></b>
+          <b></b>
+          <a routerLink="/signin">
+            <i class="pi pi-cog nav-icon"></i>
+            <span class="nav-text">Settings</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="main-content">
+      <app-navbar></app-navbar>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
