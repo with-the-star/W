@@ -8,62 +8,27 @@ export const USER_ROUTES: Route[] = [
         children: [
             {
                 path: '',
-                redirectTo: 'dashboard',
+                redirectTo: 'home',
                 pathMatch: 'full',
             },
             {
-                path: 'dashboard',
+                path: 'home',
                 loadComponent: () =>
                     import(
-                        './pages/dashboard/dashboard.component'
-                    ).then((c) => c.DashboardComponent),
+                        './pages/home/home.component'
+                    ).then((c) => c.HomeComponent),
             },
-            
-            {
-                path: 'chatting',
-                loadComponent: () =>
-                    import(
-                        './pages/chatting/chatting.component'
-                    ).then((c) => c.ChattingComponent),
-            },
-            // {
-            //     path: 'inventory-management',
-            //     loadChildren: () =>
-            //         import(
-            //             './pages/inventory-management/inventory-management.routes'
-            //         ).then((r) => r.INVENTORY_MANAGEMENT_ROUTES),
-            // },
-            // {
-            //     path: 'user-management',
-            //     loadChildren: () =>
-            //         import(
-            //             './pages/user-management/user-management.routes'
-            //         ).then((r) => r.USER_MANAGEMENT_ROUTES),
-            // },
-            // {
-            //     path: 'profile',
-            //     loadComponent: () =>
-            //         import('./pages/profile/profile.component').then(
-            //             (c) => c.ProfileComponent
-            //         ),
-            // },
-            // {
-            //     path: 'mobile-app',
-            //     loadComponent: () =>
-            //         import('./pages/mobile-app/mobile-app.component').then(
-            //             (c) => c.MobileAppComponent
-            //         ),
-            // },
             {
                 path: 'profile',
                 loadComponent: () =>
                     import(
-                        './pages/profile/profile.component'
+                        './pages/account/profile/profile.component'
                     ).then((c) => c.ProfileComponent),
             },
+
             {
                 path: '**',
-                redirectTo: 'dashboard',
+                redirectTo: 'home',
             },
         ],
     },

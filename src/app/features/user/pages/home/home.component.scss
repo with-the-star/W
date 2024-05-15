@@ -1,0 +1,30 @@
+.welcome {
+    padding: 40px;
+
+    .number-content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        input {
+            width: 45px;
+            height: 55px;
+        }
+    }
+}
+
+.progress {
+    display: flex;
+    border-radius: 40px;
+    font-size: 15px;
+}
+.progress-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #007bff;
+}
