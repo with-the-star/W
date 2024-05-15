@@ -1,0 +1,60 @@
+.home-container {
+  background-image: url("../../../../assets/img/bg1.jpg");
+  background-size: cover;
+
+  .content-container {
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-base);
+    box-shadow: var(--shadow-base-1);
+    max-width: 470px;
+    img {
+      height: 3rem;
+    }
+    form {
+      gap: var(--spacing-xl);
+
+      .textfield-container {
+        gap: var(--spacing-base);
+        flex-wrap: wrap;
+        .input-content, input{
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          gap: var(--spacing-2xs);
+          color: white;
+          border: 1px solid white;
+          border-radius: 6px;
+        }
+        ::ng-deep .p-float-label label {
+          color: white;
+        }
+      }
+      .action-container {
+        padding: var(--spacing-2xs);
+        gap: var(--spacing-md);
+        .button-content {
+          display: flex;
+          flex-direction: row;
+          gap: var(--spacing-sm);
+          align-items: center;
+        }
+      }
+    }
+  }
+}
+
+.btn-custom {
+  background-color: rgba(255, 255, 255, 0.12);
+  padding: 10px 15px;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  outline: none;
+  border: none;
+  color: var(--color-white);
+}
+
+input {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
