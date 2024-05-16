@@ -16,6 +16,8 @@ import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { DividerModule } from 'primeng/divider';
+import { DialogModule } from 'primeng/dialog';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 @Component({
   selector: 'app-home',
@@ -27,7 +29,9 @@ import { DividerModule } from 'primeng/divider';
     CardModule,
     InputTextModule,
     ProgressBarModule,
-    DividerModule
+    DividerModule,
+    DialogModule,
+    InputTextareaModule,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
@@ -37,9 +41,20 @@ export class HomeComponent {
   photoService = inject(PhotoService);
   images: any[] | undefined;
 
+  isBettingForm$ = false;
   //   @ViewChild('galleria') galleria: Galleria | undefined;
 
   ngOnInit() {
     this.photoService.getImages().then((images) => (this.images = images));
+  }
+
+  visible: boolean = false;
+
+  showDialog() {
+    this.visible = true;
+  }
+
+  showBettingForm() {
+
   }
 }
