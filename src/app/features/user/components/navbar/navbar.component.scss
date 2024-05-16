@@ -141,7 +141,9 @@
 .mobile {
   display: none;
 }
-
+.tablet {
+  display: none;
+}
 .desktop {
   display: flex;
 }
@@ -160,3 +162,13 @@
     }
   }
 }
+
+@media screen and (max-width: 1430px) {
+  .tablet {
+    display: flex !important;
+  }
+  .nav-links {
+    display: none !important;
+  }
+}
+

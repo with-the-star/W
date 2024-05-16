@@ -17,13 +17,26 @@
   <!-- links -->
   <div class="links-container desktop">
     <div class="nav-links">
-      <a class="nav-link active" [routerLink]="['/']">上证指数 <i class="pi pi-arrow-circle-down"></i></a>
-      <a class="nav-link" [routerLink]="['/']">深证成指 <i class="pi pi-arrow-circle-down"></i></a>
-      <a class="nav-link" [routerLink]="['/']">创业扳指 <i class="pi pi-arrow-circle-down"></i></a>
-      <a class="nav-link" [routerLink]="['/']">恒生指数 <i class="pi pi-arrow-circle-down"></i></a>
-      <a class="nav-link" [routerLink]="['/']">黄金价格 <i class="pi pi-arrow-circle-down"></i></a>
+      <a class="nav-link active" [routerLink]="['/']"
+        >上证指数 <i class="pi pi-arrow-circle-up"></i
+      ></a>
+      <a class="nav-link" [routerLink]="['/']"
+        >深证成指 <i class="pi pi-arrow-circle-down"></i
+      ></a>
+      <a class="nav-link" [routerLink]="['/']"
+        >创业扳指 <i class="pi pi-arrow-circle-down"></i
+      ></a>
+      <a class="nav-link" [routerLink]="['/']"
+        >恒生指数 <i class="pi pi-arrow-circle-down"></i
+      ></a>
+      <a class="nav-link" [routerLink]="['/']"
+        >黄金价格 <i class="pi pi-arrow-circle-down"></i
+      ></a>
     </div>
     <div class="nav-icon-links">
+      <a class="nav-icon-link tablet" (click)="op1.toggle($event)">
+        <i class="pi pi-arrow-down"></i>More
+      </a>
       <a class="nav-icon-link" [routerLink]="['/']"
         ><i class="pi pi-shopping-cart"></i>客服</a
       >
@@ -50,6 +63,28 @@
         </div>
       </div>
     </a>
+    <p-overlayPanel #op1 appendTo="body" styleClass="draw-user-menu">
+      <ng-template pTemplate="">
+        <div class="user-menu">
+          <a class="menu-item">
+            <!-- <i class="pi pi-user"></i> -->
+            <span>上证指数</span>
+          </a>
+          <a class="menu-item">
+            <span>深证成指</span>
+          </a>
+          <a class="menu-item">
+            <span>创业扳指</span>
+          </a>
+          <a class="menu-item">
+            <span>恒生指数</span>
+          </a>
+          <a class="menu-item">
+            <span>黄金价格</span>
+          </a>
+        </div>
+      </ng-template>
+    </p-overlayPanel>
     <p-overlayPanel #op appendTo="body" styleClass="draw-user-menu">
       <ng-template pTemplate="">
         <div class="user-menu">
@@ -76,10 +111,6 @@
         <div class="avatar-container">
           <i class="pi pi-user"></i>
         </div>
-        <!-- <div class="text-container">
-          <span class="name">John Pate</span>
-          <span class="description">Top 10 Web Developer</span>
-        </div> -->
       </div>
     </a>
     <p-menu #menu [popup]="true" appendTo="body"> </p-menu>
