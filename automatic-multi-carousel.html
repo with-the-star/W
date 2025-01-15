@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Automatic Multi-Carousel</title>
+  <style>
+    body {
+      align-items: center;
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-1750px);
+      }
+    }
+
+    .slider {
+      background: white;
+      height: 300px;
+      margin: auto;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slider::before,
+    .slider::after {
+      background: linear-gradient(to right,
+          rgb(255, 255, 255) 0%,
+          rgba(255, 255, 255, 0) 100%);
+      content: "";
+      height: 300px;
+      position: absolute;
+      width: 200px;
+      z-index: 2;
+    }
+
+    .slider::after {
+      right: 0;
+      top: 0;
+      transform: rotateZ(180deg);
+    }
+
+    .slider::before {
+      left: 0;
+      top: 0;
+    }
+
+    .slider .slide-track {
+      animation: scroll 40s linear infinite;
+      display: flex;
+      width: 3500px;
+    }
+
+    .slider .slide {
+      height: 300px;
+      width: 250px;
+      display: flex;
+      align-items: center;
+    }
+
+    .slide img {
+      width: 100px;
+      height: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="slider">
+    <div class="slide-track">
+      <a class="slide" target="_blank" href="https://readycomputing.com/intersystems-2/">
+        <img src="https://readycomputing.com/wp-content/uploads/2024/06/4-InterSystems-Draft.png" alt="" />
+      </a>
+      <a class="slide" target="_blank" href="https://readycomputing.com/tesisquare/">
+        <img src="https://readycomputing.com/wp-content/uploads/2024/01/Logo-TESISQUARE-01-1280x1614.png" alt="" />
+      </a>
+      <a class="slide" target="_blank" href="https://readycomputing.com/aws/">
+        <img src="https://readycomputing.com/wp-content/uploads/2023/12/Amazon-AWS-partner-logo.png" alt="" />
+      </a>
+      <a class="slide" target="_blank" href="https://readycomputing.com/clinical-architecture/">
+        <img src="https://readycomputing.com/wp-content/uploads/2023/09/Clinical_Architecture_Logo.jpg" alt="" />
+      </a>
+      <a class="slide" target="_blank" href="https://readycomputing.com/google-cloud-2/">
+        <img src="https://readycomputing.com/wp-content/uploads/2023/11/google-cloud-partner-logo.png" alt="" />
+      </a>
+      <a class="slide" target="_blank" href="https://readycomputing.com/mongodb/">
+        <img src="https://readycomputing.com/wp-content/uploads/2023/11/MongoDB-logo-1.png" alt="" />
+      </a>
+      <a class="slide" target="_blank" href="https://readycomputing.com/red-hat/">
+        <img src="https://readycomputing.com/wp-content/uploads/2023/09/Logo-RedHat-B-Color-CMYK.jpg" alt="" />
+      </a>
+      <a class="slide" target="_blank" href="https://readycomputing.com/tierpoint/">
+        <img src="https://readycomputing.com/wp-content/uploads/2023/09/TierPoint_logo_horizontal_Large-Web.jpg"
+          alt="" />
+      </a>
+      <a class="slide" target="_blank" href="https://readycomputing.com/alert-logic/">
+        <img src="https://readycomputing.com/wp-content/uploads/2024/01/AlertLogic-logo.png" alt="" />
+      </a>
+      <a class="slide" target="_blank" href="https://readycomputing.com/intersystems-2/">
+        <img src="https://readycomputing.com/wp-content/uploads/2024/06/4-InterSystems-Draft.png" alt="" />
+      </a>
+      <a class="slide" target="_blank" href="https://readycomputing.com/tesisquare/">
+        <img src="https://readycomputing.com/wp-content/uploads/2024/01/Logo-TESISQUARE-01-1280x1614.png" alt="" />
+      </a>
+      <a class="slide" target="_blank" href="https://readycomputing.com/aws/">
+        <img src="https://readycomputing.com/wp-content/uploads/2023/12/Amazon-AWS-partner-logo.png" alt="" />
+      </a>
+      <a class="slide" target="_blank" href="https://readycomputing.com/clinical-architecture/">
+        <img src="https://readycomputing.com/wp-content/uploads/2023/09/Clinical_Architecture_Logo.jpg" alt="" />
+      </a>
+      <a class="slide" target="_blank" href="https://readycomputing.com/google-cloud-2/">
+        <img src="https://readycomputing.com/wp-content/uploads/2023/11/google-cloud-partner-logo.png" alt="" />
+      </a>
+      <a class="slide" target="_blank" href="https://readycomputing.com/mongodb/">
+        <img src="https://readycomputing.com/wp-content/uploads/2023/11/MongoDB-logo-1.png" alt="" />
+      </a>
+      <a class="slide" target="_blank" href="https://readycomputing.com/red-hat/">
+        <img src="https://readycomputing.com/wp-content/uploads/2023/09/Logo-RedHat-B-Color-CMYK.jpg" alt="" />
+      </a>
+      <a class="slide" target="_blank" href="https://readycomputing.com/tierpoint/">
+        <img src="https://readycomputing.com/wp-content/uploads/2023/09/TierPoint_logo_horizontal_Large-Web.jpg"
+          alt="" />
+      </a>
+      <a class="slide" target="_blank" href="https://readycomputing.com/alert-logic/">
+        <img src="https://readycomputing.com/wp-content/uploads/2024/01/AlertLogic-logo.png" alt="" />
+      </a>
+    </div>
+  </div>
+  <script>
+    const slideTrack = document.querySelector(".slide-track");
+
+    slideTrack.addEventListener("mouseenter", () => {
+      slideTrack.style.animationPlayState = "paused";
+    });
+
+    slideTrack.addEventListener("mouseleave", () => {
+      slideTrack.style.animationPlayState = "running";
+    });
+  </script>
+</body>
+
+</html>
